@@ -1,0 +1,11 @@
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_ADO\bin\Debug\PrySWII_ADO.dll
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_ADO\bin\Debug\PrySWII_ADO.pdb
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_ADO\obj\Debug\PrySWII_ADO.csprojResolveAssemblyReference.cache
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_ADO\obj\Debug\PrySWII_ADO.dll
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_ADO\obj\Debug\PrySWII_ADO.pdb
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_ADO\bin\Debug\PrySWII_ADO.dll.config
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_ADO\bin\Debug\EntityFramework.dll
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_ADO\bin\Debug\PrySWII_BE.dll
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_ADO\bin\Debug\PrySWII_BE.pdb
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_ADO\bin\Debug\EntityFramework.xml
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_ADO\bin\Debug\es\EntityFramework.resources.dll

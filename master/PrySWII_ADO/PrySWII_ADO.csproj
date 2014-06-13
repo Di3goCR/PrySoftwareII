@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3AB21F9B-6AB8-46DC-8D12-A13E245850A6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PrySWII_ADO</RootNamespace>
+    <AssemblyName>PrySWII_ADO</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alergias.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CitaADO.cs" />
+    <Compile Include="Citas.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClienteADO.cs" />
+    <Compile Include="ConsultarCitaEstadoRango_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarCitaEstadoRango_Result1.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarEmpleadoCita_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarEmpleado_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Detalle_Examenes.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Detalle_Receta.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Distrito.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DistritoADO.cs" />
+    <Compile Include="Empleado.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmpleadoADO.cs" />
+    <Compile Include="EspecialidadADO.cs" />
+    <Compile Include="Especialidades.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Examenes.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExamenesADO.cs" />
+    <Compile Include="ListarCitas_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListarDistrito_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListarEspecialidad_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListarPacienteDistrito_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListarPacienteDistrito_Result1.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListarPacienteTipoSangre_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListarPacienteTipoSangre_Result1.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Medicamento.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Miselada.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Miselada.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Miselada.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Miselada.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Miselada.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecetasADO.cs" />
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_consultarCitasEmpleado_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_consultarCitasEmpleado_Result1.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_consultarCita_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_ConsultarEmpEspecialidad_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_ConsultarEmpleadoEspecialidad_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_ConsultarEmpleadoEspecialidad_Result1.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_ConsultarEmpleadoEspecialidad_Result2.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_consultarEmpleado_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_consultarPaciente_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_consultarStockMedicamento_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_consultarUsuario_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_listarCitaDoctor_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_listarCitaEstadoFecha_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_listarCitaPaciente_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_listarCita_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_listarDistrito_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_listarEmpleadoDistrito_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_listarEmpleadoDistrito_Result1.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_listarEmpleadoXtipo2_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_listarEmpleado_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_listarMedicamentosPorTipo_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_listarMedicamento_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_listarNombreCompleto_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_listarPacienteDistrito_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_listarPacienteNombreCompleto_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_listarPacienteTipoSangre_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_listarPaciente_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_ListarUsuarios_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_ListarUsuMedicos_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_login_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_obtener_usuario_Result.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioADO.cs" />
+    <Compile Include="Usuarios.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsuMedico.cs">
+      <DependentUpon>Miselada.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PrySWII_BE\PrySWII_BE.csproj">
+      <Project>{36619f0b-12c2-46ce-9929-d11c4f639e99}</Project>
+      <Name>PrySWII_BE</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Miselada.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Miselada.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Miselada.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Miselada.edmx</DependentUpon>
+      <LastGenOutput>Miselada.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Miselada.edmx.diagram">
+      <DependentUpon>Miselada.edmx</DependentUpon>
+    </None>
+    <None Include="Miselada.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Miselada.edmx</DependentUpon>
+      <LastGenOutput>Miselada.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

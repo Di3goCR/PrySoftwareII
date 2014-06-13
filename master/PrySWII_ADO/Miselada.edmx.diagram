@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f3b357f614fb4123b04863ca82c981c9" Name="Diagrama1">
+        <EntityTypeShape EntityType="MiseladaModel.Alergias" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MiseladaModel.Citas" Width="2" PointX="8.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MiseladaModel.Detalle_Examenes" Width="1.5" PointX="7.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MiseladaModel.Detalle_Receta" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MiseladaModel.Distrito" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MiseladaModel.Empleado" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="MiseladaModel.Especialidades" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MiseladaModel.Examenes" Width="1.5" PointX="5.25" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MiseladaModel.Medicamento" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MiseladaModel.Paciente" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MiseladaModel.sysdiagrams" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MiseladaModel.Usuarios" Width="1.5" PointX="5.25" PointY="16.375" IsExpanded="true" />
+        <AssociationConnector Association="MiseladaModel.FK_Alergias_paciente" ManuallyRouted="false" />
+        <AssociationConnector Association="MiseladaModel.FK__Citas__IdEmplead__1367E606" ManuallyRouted="false" />
+        <AssociationConnector Association="MiseladaModel.FK__Citas__IdPacient__145C0A3F" ManuallyRouted="false" />
+        <AssociationConnector Association="MiseladaModel.FK__Detalle_E__IdExa__1CBC4616" ManuallyRouted="false" />
+        <AssociationConnector Association="MiseladaModel.FK__Detalle_R__IdPac__17036CC0" ManuallyRouted="false" />
+        <AssociationConnector Association="MiseladaModel.FK__Empleado__IdDist__15502E78" ManuallyRouted="false" />
+        <AssociationConnector Association="MiseladaModel.FK__Paciente__IdDist__164452B1" ManuallyRouted="false" />
+        <AssociationConnector Association="MiseladaModel.FK__Empleado__IdEspe__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="MiseladaModel.FK__Examenes__IdPaci__19DFD96B" ManuallyRouted="false" />
+        <AssociationConnector Association="MiseladaModel.FK__Usuarios__IdPaci__76969D2E" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MiseladaModel.UsuMedico" Width="1.5" PointX="3.16052136531124" PointY="16.305450268232008" />
+        <AssociationConnector Association="MiseladaModel.FK__UsuMedico__IdEmp__59C55456" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

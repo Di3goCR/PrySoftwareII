@@ -1,0 +1,5 @@
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_BE\bin\Debug\PrySWII_BE.dll
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_BE\bin\Debug\PrySWII_BE.pdb
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_BE\obj\Debug\PrySWII_BE.csprojResolveAssemblyReference.cache
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_BE\obj\Debug\PrySWII_BE.dll
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_BE\obj\Debug\PrySWII_BE.pdb

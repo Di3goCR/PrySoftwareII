@@ -1,0 +1,749 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MiseladaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MiseladaEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Alergias" EntityType="MiseladaModel.Alergias" />
+    <EntitySet Name="Citas" EntityType="MiseladaModel.Citas" />
+    <EntitySet Name="Detalle_Examenes" EntityType="MiseladaModel.Detalle_Examenes" />
+    <EntitySet Name="Detalle_Receta" EntityType="MiseladaModel.Detalle_Receta" />
+    <EntitySet Name="Distrito" EntityType="MiseladaModel.Distrito" />
+    <EntitySet Name="Empleado" EntityType="MiseladaModel.Empleado" />
+    <EntitySet Name="Especialidades" EntityType="MiseladaModel.Especialidades" />
+    <EntitySet Name="Estado" EntityType="MiseladaModel.Estado" />
+    <EntitySet Name="Examenes" EntityType="MiseladaModel.Examenes" />
+    <EntitySet Name="Medicamento" EntityType="MiseladaModel.Medicamento" />
+    <EntitySet Name="Paciente" EntityType="MiseladaModel.Paciente" />
+    <EntitySet Name="sysdiagrams" EntityType="MiseladaModel.sysdiagrams" />
+    <EntitySet Name="Usuarios" EntityType="MiseladaModel.Usuarios" />
+    <AssociationSet Name="FK_Alergias_paciente" Association="MiseladaModel.FK_Alergias_paciente">
+      <End Role="Paciente" EntitySet="Paciente" />
+      <End Role="Alergias" EntitySet="Alergias" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Citas__IdEmplead__1367E606" Association="MiseladaModel.FK__Citas__IdEmplead__1367E606">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Citas" EntitySet="Citas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Citas__IdPacient__145C0A3F" Association="MiseladaModel.FK__Citas__IdPacient__145C0A3F">
+      <End Role="Paciente" EntitySet="Paciente" />
+      <End Role="Citas" EntitySet="Citas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Estado__IdCita__123EB7A3" Association="MiseladaModel.FK__Estado__IdCita__123EB7A3">
+      <End Role="Citas" EntitySet="Citas" />
+      <End Role="Estado" EntitySet="Estado" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Detalle_E__IdExa__1CBC4616" Association="MiseladaModel.FK__Detalle_E__IdExa__1CBC4616">
+      <End Role="Examenes" EntitySet="Examenes" />
+      <End Role="Detalle_Examenes" EntitySet="Detalle_Examenes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Detalle_R__IdPac__17036CC0" Association="MiseladaModel.FK__Detalle_R__IdPac__17036CC0">
+      <End Role="Paciente" EntitySet="Paciente" />
+      <End Role="Detalle_Receta" EntitySet="Detalle_Receta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Empleado__IdDist__15502E78" Association="MiseladaModel.FK__Empleado__IdDist__15502E78">
+      <End Role="Distrito" EntitySet="Distrito" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Paciente__IdDist__164452B1" Association="MiseladaModel.FK__Paciente__IdDist__164452B1">
+      <End Role="Distrito" EntitySet="Distrito" />
+      <End Role="Paciente" EntitySet="Paciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Empleado__IdEspe__6FE99F9F" Association="MiseladaModel.FK__Empleado__IdEspe__6FE99F9F">
+      <End Role="Especialidades" EntitySet="Especialidades" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Examenes__IdPaci__19DFD96B" Association="MiseladaModel.FK__Examenes__IdPaci__19DFD96B">
+      <End Role="Paciente" EntitySet="Paciente" />
+      <End Role="Examenes" EntitySet="Examenes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Usuarios__IdPaci__76969D2E" Association="MiseladaModel.FK__Usuarios__IdPaci__76969D2E">
+      <End Role="Paciente" EntitySet="Paciente" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(MiseladaModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(MiseladaModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="usp_actualizarCita">
+      <Parameter Name="ccod" Mode="In" Type="String" />
+      <Parameter Name="emp" Mode="In" Type="String" />
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="hinic" Mode="In" Type="Time" />
+      <Parameter Name="hfin" Mode="In" Type="Time" />
+      <Parameter Name="estado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_actualizarEmpleado">
+      <Parameter Name="ecod" Mode="In" Type="String" />
+      <Parameter Name="empPat" Mode="In" Type="String" />
+      <Parameter Name="empMat" Mode="In" Type="String" />
+      <Parameter Name="nomEmp" Mode="In" Type="String" />
+      <Parameter Name="sexo" Mode="In" Type="String" />
+      <Parameter Name="dni" Mode="In" Type="String" />
+      <Parameter Name="dir" Mode="In" Type="String" />
+      <Parameter Name="dis" Mode="In" Type="String" />
+      <Parameter Name="tel" Mode="In" Type="String" />
+      <Parameter Name="cel" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="especialidad" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_actualizarMedicamneto">
+      <Parameter Name="mcod" Mode="In" Type="String" />
+      <Parameter Name="nomMed" Mode="In" Type="String" />
+      <Parameter Name="tipo" Mode="In" Type="String" />
+      <Parameter Name="des" Mode="In" Type="String" />
+      <Parameter Name="pre" Mode="In" Type="Decimal" />
+      <Parameter Name="stock" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_actualizarPaciente">
+      <Parameter Name="pcod" Mode="In" Type="String" />
+      <Parameter Name="pacPat" Mode="In" Type="String" />
+      <Parameter Name="pacMat" Mode="In" Type="String" />
+      <Parameter Name="nomPac" Mode="In" Type="String" />
+      <Parameter Name="sexo" Mode="In" Type="String" />
+      <Parameter Name="dni" Mode="In" Type="String" />
+      <Parameter Name="dir" Mode="In" Type="String" />
+      <Parameter Name="dis" Mode="In" Type="String" />
+      <Parameter Name="tel" Mode="In" Type="String" />
+      <Parameter Name="cel" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="TipSag" Mode="In" Type="String" />
+      <Parameter Name="Tal" Mode="In" Type="String" />
+      <Parameter Name="Peso" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_cambiar_password">
+      <Parameter Name="user" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_check_respuesta">
+      <Parameter Name="user" Mode="In" Type="String" />
+      <Parameter Name="respuesta" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_consultarCita" ReturnType="Collection(MiseladaModel.usp_consultarCita_Result)">
+      <Parameter Name="ccod" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_consultarCitasEmpleado" ReturnType="Collection(MiseladaModel.usp_consultarCitasEmpleado_Result)">
+      <Parameter Name="ecod" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_consultarEmpleado" ReturnType="Collection(MiseladaModel.usp_consultarEmpleado_Result)">
+      <Parameter Name="ecod" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_consultarPaciente" ReturnType="Collection(MiseladaModel.usp_consultarPaciente_Result)">
+      <Parameter Name="pcod" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_consultarStockMedicamento" ReturnType="Collection(MiseladaModel.usp_consultarStockMedicamento_Result)">
+      <Parameter Name="tipo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_consultarUsuario" ReturnType="Collection(MiseladaModel.usp_consultarUsuario_Result)">
+      <Parameter Name="id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_eliminarCita">
+      <Parameter Name="ccod" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_eliminarEmpleado">
+      <Parameter Name="ecod" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_eliminarMedicamento">
+      <Parameter Name="mcod" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_eliminarPaciente">
+      <Parameter Name="pcod" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_insertarCita">
+      <Parameter Name="emp" Mode="In" Type="String" />
+      <Parameter Name="pac" Mode="In" Type="String" />
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="hinic" Mode="In" Type="Time" />
+      <Parameter Name="hfin" Mode="In" Type="Time" />
+      <Parameter Name="estado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_insertarEmpleado">
+      <Parameter Name="empPat" Mode="In" Type="String" />
+      <Parameter Name="empMat" Mode="In" Type="String" />
+      <Parameter Name="nomEmp" Mode="In" Type="String" />
+      <Parameter Name="sexo" Mode="In" Type="String" />
+      <Parameter Name="dni" Mode="In" Type="String" />
+      <Parameter Name="dir" Mode="In" Type="String" />
+      <Parameter Name="dis" Mode="In" Type="String" />
+      <Parameter Name="tel" Mode="In" Type="String" />
+      <Parameter Name="cel" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="idEsp" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_insertarMedicamneto">
+      <Parameter Name="nomMed" Mode="In" Type="String" />
+      <Parameter Name="tipo" Mode="In" Type="String" />
+      <Parameter Name="des" Mode="In" Type="String" />
+      <Parameter Name="pre" Mode="In" Type="Decimal" />
+      <Parameter Name="stock" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_insertarPaciente">
+      <Parameter Name="pacPat" Mode="In" Type="String" />
+      <Parameter Name="pacMat" Mode="In" Type="String" />
+      <Parameter Name="nomPac" Mode="In" Type="String" />
+      <Parameter Name="sexo" Mode="In" Type="String" />
+      <Parameter Name="dni" Mode="In" Type="String" />
+      <Parameter Name="dir" Mode="In" Type="String" />
+      <Parameter Name="dis" Mode="In" Type="String" />
+      <Parameter Name="tel" Mode="In" Type="String" />
+      <Parameter Name="cel" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="TipSag" Mode="In" Type="String" />
+      <Parameter Name="Tal" Mode="In" Type="String" />
+      <Parameter Name="Peso" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_listarCita" ReturnType="Collection(MiseladaModel.usp_listarCita_Result)" />
+    <FunctionImport Name="usp_listarCitaPaciente" ReturnType="Collection(MiseladaModel.usp_listarCitaPaciente_Result)">
+      <Parameter Name="pcod" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_listarDistrito" ReturnType="Collection(MiseladaModel.usp_listarDistrito_Result)" />
+    <FunctionImport Name="usp_listarEmpleado" ReturnType="Collection(MiseladaModel.usp_listarEmpleado_Result)" />
+    <FunctionImport Name="usp_listarEmpleadoDistrito" ReturnType="Collection(MiseladaModel.usp_listarEmpleadoDistrito_Result)">
+      <Parameter Name="cod_dis" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_listarEmpleadoXtipo2" ReturnType="Collection(MiseladaModel.usp_listarEmpleadoXtipo2_Result)">
+      <Parameter Name="tipo" Mode="In" Type="String" />
+      <Parameter Name="orden" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_listarEspecialidades" ReturnType="Collection(String)" />
+    <FunctionImport Name="usp_listarMedicamento" ReturnType="Collection(MiseladaModel.usp_listarMedicamento_Result)" />
+    <FunctionImport Name="usp_listarMedicamentosPorTipo" ReturnType="Collection(MiseladaModel.usp_listarMedicamentosPorTipo_Result)">
+      <Parameter Name="tipo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_listarNombreCompleto" ReturnType="Collection(MiseladaModel.usp_listarNombreCompleto_Result)" />
+    <FunctionImport Name="usp_listarOrdenDeAtencion" />
+    <FunctionImport Name="usp_listarOrdenPaciente">
+      <Parameter Name="pcod" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_listarPaciente" ReturnType="Collection(MiseladaModel.usp_listarPaciente_Result)" />
+    <FunctionImport Name="usp_listarPacienteDistrito" ReturnType="Collection(MiseladaModel.usp_listarPacienteDistrito_Result)">
+      <Parameter Name="cod_dis" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_listarPacienteNombreCompleto" ReturnType="Collection(MiseladaModel.usp_listarPacienteNombreCompleto_Result)" />
+    <FunctionImport Name="usp_listarTipoMedicamento" ReturnType="Collection(String)" />
+    <FunctionImport Name="usp_login" ReturnType="Collection(MiseladaModel.usp_login_Result)">
+      <Parameter Name="user" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_obtener_usuario" ReturnType="Collection(MiseladaModel.usp_obtener_usuario_Result)">
+      <Parameter Name="user" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ListarEmpleado" ReturnType="Collection(MiseladaModel.usp_listarEmpleado_Result)" />
+    <FunctionImport Name="ListarPaciente" ReturnType="Collection(MiseladaModel.usp_listarPaciente_Result)" />
+    <FunctionImport Name="ConsultarPaciente" ReturnType="Collection(MiseladaModel.usp_consultarPaciente_Result)">
+      <Parameter Name="pcod" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Alergias">
+    <Key>
+      <PropertyRef Name="IdAlergias" />
+    </Key>
+    <Property Name="IdAlergias" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="Alergenos" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="IdPaciente" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Paciente" Relationship="MiseladaModel.FK_Alergias_paciente" FromRole="Alergias" ToRole="Paciente" />
+  </EntityType>
+  <EntityType Name="Citas">
+    <Key>
+      <PropertyRef Name="IdCita" />
+    </Key>
+    <Property Name="IdCita" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="IdEmpleado" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="IdPaciente" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="HoraInicio" Type="Time" Nullable="false" Precision="0" />
+    <Property Name="HoraFin" Type="Time" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Empleado" Relationship="MiseladaModel.FK__Citas__IdEmplead__1367E606" FromRole="Citas" ToRole="Empleado" />
+    <NavigationProperty Name="Paciente" Relationship="MiseladaModel.FK__Citas__IdPacient__145C0A3F" FromRole="Citas" ToRole="Paciente" />
+    <NavigationProperty Name="Estado" Relationship="MiseladaModel.FK__Estado__IdCita__123EB7A3" FromRole="Citas" ToRole="Estado" />
+    <Property Type="String" Name="Estado1" MaxLength="1" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Detalle_Examenes">
+    <Key>
+      <PropertyRef Name="IdDetalle_Examenes" />
+    </Key>
+    <Property Name="IdDetalle_Examenes" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="Detalle" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="IdExamen" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Examenes" Relationship="MiseladaModel.FK__Detalle_E__IdExa__1CBC4616" FromRole="Detalle_Examenes" ToRole="Examenes" />
+  </EntityType>
+  <EntityType Name="Detalle_Receta">
+    <Key>
+      <PropertyRef Name="IdReceta_Detalle" />
+    </Key>
+    <Property Name="IdReceta_Detalle" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="Detalle" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="IdPaciente" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Paciente" Relationship="MiseladaModel.FK__Detalle_R__IdPac__17036CC0" FromRole="Detalle_Receta" ToRole="Paciente" />
+  </EntityType>
+  <EntityType Name="Distrito">
+    <Key>
+      <PropertyRef Name="IdDistrito" />
+    </Key>
+    <Property Name="IdDistrito" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Empleado" Relationship="MiseladaModel.FK__Empleado__IdDist__15502E78" FromRole="Distrito" ToRole="Empleado" />
+    <NavigationProperty Name="Paciente" Relationship="MiseladaModel.FK__Paciente__IdDist__164452B1" FromRole="Distrito" ToRole="Paciente" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="IdEmpleado" />
+    </Key>
+    <Property Name="IdEmpleado" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="ApeEmpPat" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="ApeEmpMat" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="NomEmpleado" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Sexo" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="NroDNI" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="Direccion" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IdDistrito" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="Telefono" Type="String" Nullable="false" MaxLength="14" Unicode="false" FixedLength="false" />
+    <Property Name="Celular" Type="String" Nullable="false" MaxLength="9" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IdEspecialidad" Type="String" MaxLength="4" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="Citas" Relationship="MiseladaModel.FK__Citas__IdEmplead__1367E606" FromRole="Empleado" ToRole="Citas" />
+    <NavigationProperty Name="Distrito" Relationship="MiseladaModel.FK__Empleado__IdDist__15502E78" FromRole="Empleado" ToRole="Distrito" />
+    <NavigationProperty Name="Especialidades" Relationship="MiseladaModel.FK__Empleado__IdEspe__6FE99F9F" FromRole="Empleado" ToRole="Especialidades" />
+  </EntityType>
+  <EntityType Name="Especialidades">
+    <Key>
+      <PropertyRef Name="IdEspecialidades" />
+    </Key>
+    <Property Name="IdEspecialidades" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+    <Property Name="Especialidad" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Empleado" Relationship="MiseladaModel.FK__Empleado__IdEspe__6FE99F9F" FromRole="Especialidades" ToRole="Empleado" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="IdEstado" />
+    </Key>
+    <Property Name="IdEstado" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="Estado1" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="IdCita" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Citas" Relationship="MiseladaModel.FK__Estado__IdCita__123EB7A3" FromRole="Estado" ToRole="Citas" />
+  </EntityType>
+  <EntityType Name="Examenes">
+    <Key>
+      <PropertyRef Name="IdExamen" />
+    </Key>
+    <Property Name="IdExamen" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="Examem" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="IdPaciente" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Detalle_Examenes" Relationship="MiseladaModel.FK__Detalle_E__IdExa__1CBC4616" FromRole="Examenes" ToRole="Detalle_Examenes" />
+    <NavigationProperty Name="Paciente" Relationship="MiseladaModel.FK__Examenes__IdPaci__19DFD96B" FromRole="Examenes" ToRole="Paciente" />
+  </EntityType>
+  <EntityType Name="Medicamento">
+    <Key>
+      <PropertyRef Name="IdMedicamento" />
+    </Key>
+    <Property Name="IdMedicamento" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="NomMedicamento" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="TipoMedicamento" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Precio" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Stock" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Paciente">
+    <Key>
+      <PropertyRef Name="IdPaciente" />
+    </Key>
+    <Property Name="IdPaciente" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="ApePacPat" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="ApePacMat" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="NomPaciente" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Sexo" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="NroIdentidad" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="Direccion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IdDistrito" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="Telefono" Type="String" MaxLength="14" Unicode="false" FixedLength="false" />
+    <Property Name="Celular" Type="String" Nullable="false" MaxLength="9" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TipSangrePac" Type="String" MaxLength="7" Unicode="true" FixedLength="true" />
+    <Property Name="TallaPac" Type="String" MaxLength="7" Unicode="true" FixedLength="true" />
+    <Property Name="PesoPac" Type="String" MaxLength="7" Unicode="true" FixedLength="true" />
+    <NavigationProperty Name="Alergias" Relationship="MiseladaModel.FK_Alergias_paciente" FromRole="Paciente" ToRole="Alergias" />
+    <NavigationProperty Name="Citas" Relationship="MiseladaModel.FK__Citas__IdPacient__145C0A3F" FromRole="Paciente" ToRole="Citas" />
+    <NavigationProperty Name="Detalle_Receta" Relationship="MiseladaModel.FK__Detalle_R__IdPac__17036CC0" FromRole="Paciente" ToRole="Detalle_Receta" />
+    <NavigationProperty Name="Distrito" Relationship="MiseladaModel.FK__Paciente__IdDist__164452B1" FromRole="Paciente" ToRole="Distrito" />
+    <NavigationProperty Name="Examenes" Relationship="MiseladaModel.FK__Examenes__IdPaci__19DFD96B" FromRole="Paciente" ToRole="Examenes" />
+    <NavigationProperty Name="Usuarios" Relationship="MiseladaModel.FK__Usuarios__IdPaci__76969D2E" FromRole="Paciente" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="IdUsuairo" />
+    </Key>
+    <Property Name="IdUsuairo" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="true" />
+    <Property Name="usuario" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="contraseña" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="false" />
+    <Property Name="estado" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="IdPaciente" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Paciente" Relationship="MiseladaModel.FK__Usuarios__IdPaci__76969D2E" FromRole="Usuarios" ToRole="Paciente" />
+  </EntityType>
+  <Association Name="FK_Alergias_paciente">
+    <End Role="Paciente" Type="MiseladaModel.Paciente" Multiplicity="0..1" />
+    <End Role="Alergias" Type="MiseladaModel.Alergias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paciente">
+        <PropertyRef Name="IdPaciente" />
+      </Principal>
+      <Dependent Role="Alergias">
+        <PropertyRef Name="IdPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Citas__IdEmplead__1367E606">
+    <End Role="Empleado" Type="MiseladaModel.Empleado" Multiplicity="1" />
+    <End Role="Citas" Type="MiseladaModel.Citas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="IdEmpleado" />
+      </Principal>
+      <Dependent Role="Citas">
+        <PropertyRef Name="IdEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Citas__IdPacient__145C0A3F">
+    <End Role="Paciente" Type="MiseladaModel.Paciente" Multiplicity="1" />
+    <End Role="Citas" Type="MiseladaModel.Citas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paciente">
+        <PropertyRef Name="IdPaciente" />
+      </Principal>
+      <Dependent Role="Citas">
+        <PropertyRef Name="IdPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Estado__IdCita__123EB7A3">
+    <End Role="Citas" Type="MiseladaModel.Citas" Multiplicity="1" />
+    <End Role="Estado" Type="MiseladaModel.Estado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Citas">
+        <PropertyRef Name="IdCita" />
+      </Principal>
+      <Dependent Role="Estado">
+        <PropertyRef Name="IdCita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Detalle_E__IdExa__1CBC4616">
+    <End Role="Examenes" Type="MiseladaModel.Examenes" Multiplicity="1" />
+    <End Role="Detalle_Examenes" Type="MiseladaModel.Detalle_Examenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Examenes">
+        <PropertyRef Name="IdExamen" />
+      </Principal>
+      <Dependent Role="Detalle_Examenes">
+        <PropertyRef Name="IdExamen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Detalle_R__IdPac__17036CC0">
+    <End Role="Paciente" Type="MiseladaModel.Paciente" Multiplicity="1" />
+    <End Role="Detalle_Receta" Type="MiseladaModel.Detalle_Receta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paciente">
+        <PropertyRef Name="IdPaciente" />
+      </Principal>
+      <Dependent Role="Detalle_Receta">
+        <PropertyRef Name="IdPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Empleado__IdDist__15502E78">
+    <End Role="Distrito" Type="MiseladaModel.Distrito" Multiplicity="1" />
+    <End Role="Empleado" Type="MiseladaModel.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distrito">
+        <PropertyRef Name="IdDistrito" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="IdDistrito" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Paciente__IdDist__164452B1">
+    <End Role="Distrito" Type="MiseladaModel.Distrito" Multiplicity="1" />
+    <End Role="Paciente" Type="MiseladaModel.Paciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distrito">
+        <PropertyRef Name="IdDistrito" />
+      </Principal>
+      <Dependent Role="Paciente">
+        <PropertyRef Name="IdDistrito" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Empleado__IdEspe__6FE99F9F">
+    <End Role="Especialidades" Type="MiseladaModel.Especialidades" Multiplicity="0..1" />
+    <End Role="Empleado" Type="MiseladaModel.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Especialidades">
+        <PropertyRef Name="IdEspecialidades" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="IdEspecialidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Examenes__IdPaci__19DFD96B">
+    <End Role="Paciente" Type="MiseladaModel.Paciente" Multiplicity="1" />
+    <End Role="Examenes" Type="MiseladaModel.Examenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paciente">
+        <PropertyRef Name="IdPaciente" />
+      </Principal>
+      <Dependent Role="Examenes">
+        <PropertyRef Name="IdPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Usuarios__IdPaci__76969D2E">
+    <End Role="Paciente" Type="MiseladaModel.Paciente" Multiplicity="0..1" />
+    <End Role="Usuarios" Type="MiseladaModel.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paciente">
+        <PropertyRef Name="IdPaciente" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="IdPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="usp_consultarCita_Result">
+    <Property Type="String" Name="IdCita" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="IdEmpleado" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="IdPaciente" Nullable="false" MaxLength="4" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" />
+    <Property Type="Time" Name="HoraInicio" Nullable="false" />
+    <Property Type="Time" Name="HoraFin" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="usp_consultarCitasEmpleado_Result">
+    <Property Type="String" Name="IdCita" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="Especialidad" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Paciente" Nullable="false" MaxLength="93" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" />
+    <Property Type="Time" Name="HoraInicio" Nullable="false" />
+    <Property Type="Time" Name="HoraFin" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="usp_consultarEmpleado_Result">
+    <Property Type="String" Name="IdEmpleado" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="ApeEmpMat" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="ApeEmpPat" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="NomEmpleado" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Sexo" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="NroDNI" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="Direccion" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdDistrito" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="Telefono" Nullable="false" MaxLength="14" />
+    <Property Type="String" Name="Celular" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Especialidad" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="usp_consultarPaciente_Result">
+    <Property Type="String" Name="IdPaciente" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="ApePacPat" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="ApePacMat" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="NomPaciente" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Sexo" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="NroIdentidad" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="Direccion" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IdDistrito" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="Celular" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TipSangrePac" Nullable="true" MaxLength="7" />
+    <Property Type="String" Name="TallaPac" Nullable="true" MaxLength="7" />
+    <Property Type="String" Name="PesoPac" Nullable="true" MaxLength="7" />
+  </ComplexType>
+  <ComplexType Name="usp_consultarStockMedicamento_Result">
+    <Property Type="String" Name="IdMedicamento" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="NomMedicamento" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="100" />
+    <Property Type="Decimal" Name="Precio" Nullable="false" Precision="19" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="usp_consultarUsuario_Result">
+    <Property Type="String" Name="IdUsuairo" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="usuario" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="contraseña" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="estado" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="IdPaciente" Nullable="true" MaxLength="4" />
+  </ComplexType>
+  <ComplexType Name="usp_listarCita_Result">
+    <Property Type="String" Name="IdCita" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="Empleado" Nullable="true" MaxLength="93" />
+    <Property Type="String" Name="Paciente" Nullable="true" MaxLength="93" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" />
+    <Property Type="Time" Name="HoraInicio" Nullable="false" />
+    <Property Type="Time" Name="HoraFin" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="usp_listarCitaPaciente_Result">
+    <Property Type="String" Name="IdCita" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="Doctor" Nullable="true" MaxLength="93" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" />
+    <Property Type="Time" Name="HoraInicio" Nullable="false" />
+    <Property Type="Time" Name="HoraFin" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="usp_listarDistrito_Result">
+    <Property Type="String" Name="IdDistrito" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="usp_listarEmpleado_Result">
+    <Property Type="String" Name="IdEmpleado" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="ApeEmpPat" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="ApeEmpMat" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="NomEmpleado" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Genero" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="NroDNI" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="Direccion" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Distrito" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Telefono" Nullable="false" MaxLength="14" />
+    <Property Type="String" Name="Celular" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Especialidad" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Citas" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_listarEmpleadoDistrito_Result">
+    <Property Type="String" Name="IdEmpleado" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="ApeEmpPat" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="ApeEmpMat" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="NomEmpleado" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Especialidad" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Sexo" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="NroDNI" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="Direccion" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdDistrito" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="Telefono" Nullable="false" MaxLength="14" />
+    <Property Type="String" Name="Celular" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="usp_listarEmpleadoXtipo2_Result">
+    <Property Type="String" Name="IdEmpleado" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="ApeEmpPat" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="ApeEmpMat" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="NomEmpleado" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Genero" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="NroDNI" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="Direccion" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdDistrito" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="Telefono" Nullable="false" MaxLength="14" />
+    <Property Type="String" Name="Celular" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Especialidad" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Citas" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_listarMedicamento_Result">
+    <Property Type="String" Name="IdMedicamento" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="NomMedicamento" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="TipoMedicamento" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="100" />
+    <Property Type="Decimal" Name="Precio" Nullable="false" Precision="19" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="usp_listarMedicamentosPorTipo_Result">
+    <Property Type="String" Name="IdMedicamento" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="NomMedicamento" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="TipoMedicamento" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="100" />
+    <Property Type="Decimal" Name="Precio" Nullable="false" Precision="19" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="usp_listarNombreCompleto_Result">
+    <Property Type="String" Name="IdEmpleado" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="NOMBRECOMPLETO" Nullable="false" MaxLength="93" />
+  </ComplexType>
+  <ComplexType Name="usp_listarPaciente_Result">
+    <Property Type="String" Name="IdPaciente" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="ApePacMat" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="ApePacPat" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="NomPaciente" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="NombreCompleto" Nullable="false" MaxLength="93" />
+    <Property Type="String" Name="NroIdentidad" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="Direccion" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Distrito" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="Celular" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TipSangrePac" Nullable="true" MaxLength="7" />
+    <Property Type="String" Name="TallaPac" Nullable="true" MaxLength="7" />
+    <Property Type="String" Name="PesoPac" Nullable="true" MaxLength="7" />
+    <Property Type="String" Name="Genero" Nullable="true" MaxLength="9" />
+  </ComplexType>
+  <ComplexType Name="usp_listarPacienteDistrito_Result">
+    <Property Type="String" Name="IdPaciente" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="ApePacPat" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="ApePacMat" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="NomPaciente" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Sexo" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="NroIdentidad" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="Direccion" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="Celular" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="usp_listarPacienteNombreCompleto_Result">
+    <Property Type="String" Name="IdPaciente" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="NombreCompleto" Nullable="false" MaxLength="93" />
+  </ComplexType>
+  <ComplexType Name="usp_login_Result">
+    <Property Type="String" Name="IdUsuairo" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="usuario" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="contraseña" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="estado" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="IdPaciente" Nullable="true" MaxLength="4" />
+  </ComplexType>
+  <ComplexType Name="usp_obtener_usuario_Result">
+    <Property Type="String" Name="IdUsuairo" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="usuario" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="contraseña" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="estado" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="IdPaciente" Nullable="true" MaxLength="4" />
+  </ComplexType>
+</Schema>

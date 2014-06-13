@@ -1,0 +1,10 @@
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_BE\bin\Release\PrySWII_BE.dll
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_BE\bin\Release\PrySWII_BE.pdb
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_BE\obj\Release\PrySWII_BE.dll
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_BE\obj\Release\PrySWII_BE.pdb
+C:\Users\Brian\Desktop\Proyecto SWII\PrySWII\PrySWII_BE\obj\Release\PrySWII_BE.csprojResolveAssemblyReference.cache
+C:\Users\Alumno-CT\Documents\Proyecto SWII\PrySWII\PrySWII_BE\bin\Release\PrySWII_BE.dll
+C:\Users\Alumno-CT\Documents\Proyecto SWII\PrySWII\PrySWII_BE\bin\Release\PrySWII_BE.pdb
+C:\Users\Alumno-CT\Documents\Proyecto SWII\PrySWII\PrySWII_BE\obj\Release\PrySWII_BE.csprojResolveAssemblyReference.cache
+C:\Users\Alumno-CT\Documents\Proyecto SWII\PrySWII\PrySWII_BE\obj\Release\PrySWII_BE.dll
+C:\Users\Alumno-CT\Documents\Proyecto SWII\PrySWII\PrySWII_BE\obj\Release\PrySWII_BE.pdb
