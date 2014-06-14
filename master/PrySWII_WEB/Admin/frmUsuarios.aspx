@@ -44,8 +44,9 @@
                     CellPadding="4" ForeColor="#333333" GridLines="None" Width="848px">
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                     <Columns>
-                        <asp:ButtonField ButtonType="Button" CommandName="Editar" 
-                            ImageUrl="~/Images/Editar.png" Text="Activar">
+                        <asp:ButtonField ButtonType="Image" CommandName="Editar" 
+                            ImageUrl="~/Images/Editar.png" Text="Editar">
+                        <ControlStyle Height="25px" Width="25px" />
                         <ItemStyle Width="20px" />
                         </asp:ButtonField>
                         <asp:BoundField DataField="IdUsuario" HeaderText="Codigo">

@@ -21,7 +21,7 @@ public partial class Mantenimientos_frmCitas : System.Web.UI.Page
         {
             if (Session["codP"] != null)
             {
-                ClienteBL paciente = new ClienteBL();
+                PacienteBL paciente = new PacienteBL();
                 PacienteBE pacientebe = new PacienteBE();
                 pacientebe = paciente.consultarPaciente(Session["codP"].ToString());
 

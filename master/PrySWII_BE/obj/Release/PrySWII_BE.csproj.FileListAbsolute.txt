@@ -8,3 +8,7 @@ C:\Users\Alumno-CT\Documents\Proyecto SWII\PrySWII\PrySWII_BE\bin\Release\PrySWI
 C:\Users\Alumno-CT\Documents\Proyecto SWII\PrySWII\PrySWII_BE\obj\Release\PrySWII_BE.csprojResolveAssemblyReference.cache
 C:\Users\Alumno-CT\Documents\Proyecto SWII\PrySWII\PrySWII_BE\obj\Release\PrySWII_BE.dll
 C:\Users\Alumno-CT\Documents\Proyecto SWII\PrySWII\PrySWII_BE\obj\Release\PrySWII_BE.pdb
+C:\Users\Diego2\Source\Repos\PrySoftwareII\master\PrySWII_BE\bin\Release\PrySWII_BE.dll
+C:\Users\Diego2\Source\Repos\PrySoftwareII\master\PrySWII_BE\bin\Release\PrySWII_BE.pdb
+C:\Users\Diego2\Source\Repos\PrySoftwareII\master\PrySWII_BE\obj\Release\PrySWII_BE.dll
+C:\Users\Diego2\Source\Repos\PrySoftwareII\master\PrySWII_BE\obj\Release\PrySWII_BE.pdb

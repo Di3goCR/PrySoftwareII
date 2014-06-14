@@ -8,9 +8,9 @@ using PrySWII_ADO;
 
 namespace PrySWII_BL
 {
-    public class ClienteBL
+    public class PacienteBL
     {
-        ClienteADO objpaciente = new ClienteADO();
+        PacienteADO objpaciente = new PacienteADO();
 
         public PacienteBE consultarPaciente(String codPac)
         {

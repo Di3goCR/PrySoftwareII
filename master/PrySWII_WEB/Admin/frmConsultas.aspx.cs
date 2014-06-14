@@ -12,7 +12,7 @@ public partial class Admin_frmConsultas : System.Web.UI.Page
     DistritoBL objDistritoBL = new DistritoBL();
     EspecialidadesBL objEspecialidadBL = new EspecialidadesBL();
     EmpleadoBL objEmpleadoBL = new EmpleadoBL();
-    ClienteBL objClienteBL = new ClienteBL();
+    PacienteBL objClienteBL = new PacienteBL();
     CitasBL objCitasBL = new CitasBL();
 
     protected void Page_Load(object sender, EventArgs e)

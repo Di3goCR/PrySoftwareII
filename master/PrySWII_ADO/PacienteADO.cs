@@ -9,7 +9,7 @@ using PrySWII_BE;
 
 namespace PrySWII_ADO
 {
-    public class ClienteADO
+    public class PacienteADO
     {
         Boolean vexito = false;
         MiseladaEntities Miselada = new MiseladaEntities();
@@ -156,7 +156,6 @@ namespace PrySWII_ADO
 
                 foreach (var resultado in query)
                 {
-
                     objPacienteBE.IdPaciente = resultado.IdPaciente;
                     objPacienteBE.ApePacPat = resultado.ApePacPat;
                     objPacienteBE.ApePacMat = resultado.ApePacMat;

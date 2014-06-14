@@ -2,48 +2,39 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace PrySWII_BE
 {
-    public class UsuarioBE
+   public class UsuarioBE
     {
-        private string codusu;
-        public string IdUsuario
+        private string _Login;
+        public string Login
         {
-            get { return codusu; }
-            set { codusu = value; }
+            get { return _Login; }
+            set { _Login = value; }
         }
-        private string usu;
-        public string usuario
+
+        private string _Password;
+        public string Password
         {
-            get { return usu; }
-            set { usu = value; }
+            get { return _Password; }
+            set { _Password = value; }
         }
-        private string pw;
-        public string contraseña
+
+        private string _Email;
+        public string Email
         {
-            get { return pw; }
-            set { pw = value; }
+            get { return _Email; }
+            set { _Email = value; }
         }
-        private string est;
-        public string estado
-        {
-            get { return est; }
-            set { est = value; }
-        }
-        private string codpac;
-        public string IdPaciente
-        {
-            get { return codpac; }
-            set { codpac = value; }
-        }
-        private string _rol;
+
+        private string _Rol;
         public string Rol
         {
-            get { return _rol; }
-            set { _rol = value; }
+            get { return _Rol; }
+            set { _Rol = value; }
         }
+        
 
     }
 }

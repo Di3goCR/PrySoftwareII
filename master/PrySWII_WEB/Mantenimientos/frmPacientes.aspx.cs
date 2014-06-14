@@ -9,7 +9,7 @@ using PrySWII_BL;
 
 public partial class Mantenimientos_frmPacientes : System.Web.UI.Page
 {
-    ClienteBL objPacienteBL = new ClienteBL();
+    PacienteBL objPacienteBL = new PacienteBL();
 
 
     protected void Page_Load(object sender, EventArgs e)

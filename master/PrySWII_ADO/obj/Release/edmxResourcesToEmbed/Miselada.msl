@@ -540,12 +540,13 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="usp_obtener_usuario" FunctionName="MiseladaModel.Store.usp_obtener_usuario">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="MiseladaModel.usp_obtener_usuario_Result">
+        <ComplexTypeMapping TypeName="MiseladaModel.usp_obtener_usuario_Result1">
           <ScalarProperty Name="IdUsuairo" ColumnName="IdUsuairo" />
           <ScalarProperty Name="usuario" ColumnName="usuario" />
           <ScalarProperty Name="contraseña" ColumnName="contraseña" />
           <ScalarProperty Name="estado" ColumnName="estado" />
           <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

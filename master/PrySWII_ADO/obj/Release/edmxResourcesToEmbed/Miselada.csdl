@@ -242,7 +242,7 @@
       <Parameter Name="user" Mode="In" Type="String" />
       <Parameter Name="password" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="usp_obtener_usuario" ReturnType="Collection(MiseladaModel.usp_obtener_usuario_Result)">
+    <FunctionImport Name="usp_obtener_usuario" ReturnType="Collection(MiseladaModel.usp_obtener_usuario_Result1)">
       <Parameter Name="user" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="ListarEmpleado" ReturnType="Collection(MiseladaModel.usp_listarEmpleado_Result)" />
@@ -1006,5 +1006,13 @@
     <Property Type="Time" Name="HoraInicio" Nullable="false" />
     <Property Type="Time" Name="HoraFin" Nullable="false" />
     <Property Type="String" Name="Estado" Nullable="true" MaxLength="9" />
+  </ComplexType>
+  <ComplexType Name="usp_obtener_usuario_Result1">
+    <Property Type="String" Name="IdUsuairo" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="usuario" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="contraseña" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="estado" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="IdPaciente" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="Rol" Nullable="true" MaxLength="1" />
   </ComplexType>
 </Schema>

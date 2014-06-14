@@ -34,3 +34,15 @@ C:\Users\Alumno-CT\Documents\Proyecto SWII\PrySWII\PrySWII_BL\bin\Release\es\Ent
 C:\Users\Alumno-CT\Documents\Proyecto SWII\PrySWII\PrySWII_BL\obj\Release\PrySWII_BL.csprojResolveAssemblyReference.cache
 C:\Users\Alumno-CT\Documents\Proyecto SWII\PrySWII\PrySWII_BL\obj\Release\PrySWII_BL.dll
 C:\Users\Alumno-CT\Documents\Proyecto SWII\PrySWII\PrySWII_BL\obj\Release\PrySWII_BL.pdb
+C:\Users\Diego2\Source\Repos\PrySoftwareII\master\PrySWII_BL\bin\Release\PrySWII_BL.dll
+C:\Users\Diego2\Source\Repos\PrySoftwareII\master\PrySWII_BL\bin\Release\PrySWII_BL.pdb
+C:\Users\Diego2\Source\Repos\PrySoftwareII\master\PrySWII_BL\bin\Release\PrySWII_ADO.dll
+C:\Users\Diego2\Source\Repos\PrySoftwareII\master\PrySWII_BL\bin\Release\PrySWII_BE.dll
+C:\Users\Diego2\Source\Repos\PrySoftwareII\master\PrySWII_BL\bin\Release\EntityFramework.dll
+C:\Users\Diego2\Source\Repos\PrySoftwareII\master\PrySWII_BL\bin\Release\PrySWII_ADO.pdb
+C:\Users\Diego2\Source\Repos\PrySoftwareII\master\PrySWII_BL\bin\Release\PrySWII_BE.pdb
+C:\Users\Diego2\Source\Repos\PrySoftwareII\master\PrySWII_BL\bin\Release\EntityFramework.xml
+C:\Users\Diego2\Source\Repos\PrySoftwareII\master\PrySWII_BL\bin\Release\es\EntityFramework.resources.dll
+C:\Users\Diego2\Source\Repos\PrySoftwareII\master\PrySWII_BL\obj\Release\PrySWII_BL.csprojResolveAssemblyReference.cache
+C:\Users\Diego2\Source\Repos\PrySoftwareII\master\PrySWII_BL\obj\Release\PrySWII_BL.dll
+C:\Users\Diego2\Source\Repos\PrySoftwareII\master\PrySWII_BL\obj\Release\PrySWII_BL.pdb

@@ -11,7 +11,7 @@ public partial class Mantenimientos_frmPacientesIngresar : System.Web.UI.Page
 {
     DistritoBL objDistritoBL = new DistritoBL();
     PacienteBE objPacienteBE = new PacienteBE();
-    ClienteBL objPacienteBL = new ClienteBL();
+    PacienteBL objPacienteBL = new PacienteBL();
 
     protected void Page_Load(object sender, EventArgs e)
     {

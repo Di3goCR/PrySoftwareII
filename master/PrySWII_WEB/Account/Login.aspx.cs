@@ -64,12 +64,12 @@ public partial class Account_Login : System.Web.UI.Page
             }
         }
         defaultAdmin = "DefaultAdmin";
-
+        
         if (Membership.GetUser(defaultAdmin) == null)
-            Membership.CreateUser(defaultAdmin, "default");
+            Membership.CreateUser(defaultAdmin, "default","junk");
         if (!Roles.IsUserInRole(defaultAdmin, roles[2].ToString()))
             Roles.AddUserToRole(defaultAdmin, roles[2].ToString());
-
+        
         LoginBL login = new LoginBL();
         if (Membership.ValidateUser(myLogin.UserName, myLogin.Password))
         {
@@ -79,10 +79,11 @@ public partial class Account_Login : System.Web.UI.Page
             {
 
                 e.Authenticated = true;
+
                 if (myLogin.UserName != defaultAdmin)
                 {
-                    UsuarioBE validado = login.validarLogin(myLogin.UserName, myLogin.Password);
-                    Session["codP"] = validado.IdPaciente;
+                    //UsuarioBE validado = login.validarLogin(myLogin.UserName, myLogin.Password);
+                    //Session["codP"] = validado.IdPaciente;
 
                    // UsuMedicoBE validado = login.validarLogin(myLogin.UserName, myLogin.Password);
                    // Session["codP"] = validado.IdPaciente;

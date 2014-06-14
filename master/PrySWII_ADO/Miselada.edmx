@@ -4,150 +4,91 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="MiseladaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="MiseladaModelStoreContainer">
-          <EntitySet Name="Alergias" EntityType="MiseladaModel.Store.Alergias" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Citas" EntityType="MiseladaModel.Store.Citas" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Detalle_Examenes" EntityType="MiseladaModel.Store.Detalle_Examenes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Detalle_Receta" EntityType="MiseladaModel.Store.Detalle_Receta" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Distrito" EntityType="MiseladaModel.Store.Distrito" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Empleado" EntityType="MiseladaModel.Store.Empleado" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Especialidades" EntityType="MiseladaModel.Store.Especialidades" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Examenes" EntityType="MiseladaModel.Store.Examenes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Medicamento" EntityType="MiseladaModel.Store.Medicamento" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Paciente" EntityType="MiseladaModel.Store.Paciente" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="sysdiagrams" EntityType="MiseladaModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Usuarios" EntityType="MiseladaModel.Store.Usuarios" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="UsuMedico" EntityType="MiseladaModel.Store.UsuMedico" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK__Citas__IdEmplead__1367E606" Association="MiseladaModel.Store.FK__Citas__IdEmplead__1367E606">
-            <End Role="Empleado" EntitySet="Empleado" />
-            <End Role="Citas" EntitySet="Citas" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Citas__IdPacient__145C0A3F" Association="MiseladaModel.Store.FK__Citas__IdPacient__145C0A3F">
-            <End Role="Paciente" EntitySet="Paciente" />
-            <End Role="Citas" EntitySet="Citas" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Detalle_E__IdExa__1CBC4616" Association="MiseladaModel.Store.FK__Detalle_E__IdExa__1CBC4616">
-            <End Role="Examenes" EntitySet="Examenes" />
-            <End Role="Detalle_Examenes" EntitySet="Detalle_Examenes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Detalle_R__IdPac__17036CC0" Association="MiseladaModel.Store.FK__Detalle_R__IdPac__17036CC0">
-            <End Role="Paciente" EntitySet="Paciente" />
-            <End Role="Detalle_Receta" EntitySet="Detalle_Receta" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Empleado__IdDist__15502E78" Association="MiseladaModel.Store.FK__Empleado__IdDist__15502E78">
-            <End Role="Distrito" EntitySet="Distrito" />
-            <End Role="Empleado" EntitySet="Empleado" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Empleado__IdEspe__6FE99F9F" Association="MiseladaModel.Store.FK__Empleado__IdEspe__6FE99F9F">
-            <End Role="Especialidades" EntitySet="Especialidades" />
-            <End Role="Empleado" EntitySet="Empleado" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Examenes__IdPaci__19DFD96B" Association="MiseladaModel.Store.FK__Examenes__IdPaci__19DFD96B">
-            <End Role="Paciente" EntitySet="Paciente" />
-            <End Role="Examenes" EntitySet="Examenes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Paciente__IdDist__164452B1" Association="MiseladaModel.Store.FK__Paciente__IdDist__164452B1">
-            <End Role="Distrito" EntitySet="Distrito" />
-            <End Role="Paciente" EntitySet="Paciente" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Usuarios__IdPaci__76969D2E" Association="MiseladaModel.Store.FK__Usuarios__IdPaci__76969D2E">
-            <End Role="Paciente" EntitySet="Paciente" />
-            <End Role="Usuarios" EntitySet="Usuarios" />
-          </AssociationSet>
-          <AssociationSet Name="FK__UsuMedico__IdEmp__59C55456" Association="MiseladaModel.Store.FK__UsuMedico__IdEmp__59C55456">
-            <End Role="Empleado" EntitySet="Empleado" />
-            <End Role="UsuMedico" EntitySet="UsuMedico" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Alergias_paciente" Association="MiseladaModel.Store.FK_Alergias_paciente">
-            <End Role="Paciente" EntitySet="Paciente" />
-            <End Role="Alergias" EntitySet="Alergias" />
-          </AssociationSet>
-        </EntityContainer>
+    <Schema Namespace="MiseladaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Alergias">
           <Key>
             <PropertyRef Name="IdAlergias" />
           </Key>
-          <Property Name="IdAlergias" Type="nvarchar" Nullable="false" MaxLength="4" />
-          <Property Name="Alergenos" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Descripcion" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="IdAlergias" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Alergenos" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="IdPaciente" Type="nvarchar" MaxLength="4" />
         </EntityType>
         <EntityType Name="Citas">
           <Key>
             <PropertyRef Name="IdCita" />
           </Key>
-          <Property Name="IdCita" Type="nvarchar" Nullable="false" MaxLength="4" />
-          <Property Name="IdEmpleado" Type="nvarchar" Nullable="false" MaxLength="4" />
-          <Property Name="IdPaciente" Type="nvarchar" Nullable="false" MaxLength="4" />
+          <Property Name="IdCita" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="IdEmpleado" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="IdPaciente" Type="nvarchar" MaxLength="4" Nullable="false" />
           <Property Name="Fecha" Type="date" Nullable="false" />
-          <Property Name="HoraInicio" Type="time" Nullable="false" Precision="0" />
-          <Property Name="HoraFin" Type="time" Nullable="false" Precision="0" />
+          <Property Name="HoraInicio" Type="time" Precision="0" Nullable="false" />
+          <Property Name="HoraFin" Type="time" Precision="0" Nullable="false" />
           <Property Name="Estado" Type="nchar" MaxLength="1" />
         </EntityType>
         <EntityType Name="Detalle_Examenes">
           <Key>
             <PropertyRef Name="IdDetalle_Examenes" />
           </Key>
-          <Property Name="IdDetalle_Examenes" Type="nvarchar" Nullable="false" MaxLength="4" />
-          <Property Name="Detalle" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="IdExamen" Type="nvarchar" Nullable="false" MaxLength="4" />
+          <Property Name="IdDetalle_Examenes" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Detalle" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IdExamen" Type="nvarchar" MaxLength="4" Nullable="false" />
         </EntityType>
         <EntityType Name="Detalle_Receta">
           <Key>
             <PropertyRef Name="IdReceta_Detalle" />
           </Key>
-          <Property Name="IdReceta_Detalle" Type="nvarchar" Nullable="false" MaxLength="4" />
-          <Property Name="Detalle" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="IdPaciente" Type="nvarchar" Nullable="false" MaxLength="4" />
+          <Property Name="IdReceta_Detalle" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Detalle" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IdPaciente" Type="nvarchar" MaxLength="4" Nullable="false" />
         </EntityType>
         <EntityType Name="Distrito">
           <Key>
             <PropertyRef Name="IdDistrito" />
           </Key>
-          <Property Name="IdDistrito" Type="nvarchar" Nullable="false" MaxLength="4" />
-          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="IdDistrito" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <EntityType Name="Empleado">
           <Key>
             <PropertyRef Name="IdEmpleado" />
           </Key>
-          <Property Name="IdEmpleado" Type="nvarchar" Nullable="false" MaxLength="4" />
-          <Property Name="ApeEmpPat" Type="varchar" Nullable="false" MaxLength="30" />
-          <Property Name="ApeEmpMat" Type="varchar" Nullable="false" MaxLength="30" />
-          <Property Name="NomEmpleado" Type="varchar" Nullable="false" MaxLength="30" />
-          <Property Name="Sexo" Type="char" Nullable="false" MaxLength="1" />
-          <Property Name="NroDNI" Type="varchar" Nullable="false" MaxLength="8" />
-          <Property Name="Direccion" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="IdDistrito" Type="nvarchar" Nullable="false" MaxLength="4" />
-          <Property Name="Telefono" Type="varchar" Nullable="false" MaxLength="14" />
-          <Property Name="Celular" Type="varchar" Nullable="false" MaxLength="9" />
-          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IdEmpleado" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="ApeEmpPat" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ApeEmpMat" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="NomEmpleado" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Sexo" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="NroDNI" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdDistrito" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="Celular" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="IdEspecialidad" Type="char" MaxLength="4" />
         </EntityType>
         <EntityType Name="Especialidades">
           <Key>
             <PropertyRef Name="IdEspecialidades" />
           </Key>
-          <Property Name="IdEspecialidades" Type="char" Nullable="false" MaxLength="4" />
-          <Property Name="Especialidad" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IdEspecialidades" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="Especialidad" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Examenes">
           <Key>
             <PropertyRef Name="IdExamen" />
           </Key>
-          <Property Name="IdExamen" Type="nvarchar" Nullable="false" MaxLength="4" />
-          <Property Name="Examem" Type="nvarchar" Nullable="false" MaxLength="30" />
-          <Property Name="IdPaciente" Type="nvarchar" Nullable="false" MaxLength="4" />
+          <Property Name="IdExamen" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Examem" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="IdPaciente" Type="nvarchar" MaxLength="4" Nullable="false" />
         </EntityType>
         <EntityType Name="Medicamento">
           <Key>
             <PropertyRef Name="IdMedicamento" />
           </Key>
-          <Property Name="IdMedicamento" Type="nvarchar" Nullable="false" MaxLength="4" />
-          <Property Name="NomMedicamento" Type="varchar" Nullable="false" MaxLength="100" />
-          <Property Name="TipoMedicamento" Type="varchar" Nullable="false" MaxLength="30" />
-          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="IdMedicamento" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="NomMedicamento" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TipoMedicamento" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Precio" Type="money" Nullable="false" />
           <Property Name="Stock" Type="int" Nullable="false" />
         </EntityType>
@@ -155,17 +96,17 @@
           <Key>
             <PropertyRef Name="IdPaciente" />
           </Key>
-          <Property Name="IdPaciente" Type="nvarchar" Nullable="false" MaxLength="4" />
-          <Property Name="ApePacPat" Type="varchar" Nullable="false" MaxLength="30" />
-          <Property Name="ApePacMat" Type="varchar" Nullable="false" MaxLength="30" />
-          <Property Name="NomPaciente" Type="varchar" Nullable="false" MaxLength="30" />
-          <Property Name="Sexo" Type="char" Nullable="false" MaxLength="1" />
-          <Property Name="NroIdentidad" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="IdPaciente" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="ApePacPat" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ApePacMat" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="NomPaciente" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Sexo" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="NroIdentidad" Type="varchar" MaxLength="8" Nullable="false" />
           <Property Name="Direccion" Type="varchar" MaxLength="50" />
-          <Property Name="IdDistrito" Type="nvarchar" Nullable="false" MaxLength="4" />
+          <Property Name="IdDistrito" Type="nvarchar" MaxLength="4" Nullable="false" />
           <Property Name="Telefono" Type="varchar" MaxLength="14" />
-          <Property Name="Celular" Type="varchar" Nullable="false" MaxLength="9" />
-          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Celular" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="TipSangrePac" Type="nchar" MaxLength="7" />
           <Property Name="TallaPac" Type="nchar" MaxLength="7" />
           <Property Name="PesoPac" Type="nchar" MaxLength="7" />
@@ -174,9 +115,9 @@
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
@@ -184,10 +125,10 @@
           <Key>
             <PropertyRef Name="IdUsuairo" />
           </Key>
-          <Property Name="IdUsuairo" Type="nchar" Nullable="false" MaxLength="4" />
-          <Property Name="usuario" Type="nvarchar" Nullable="false" MaxLength="10" />
-          <Property Name="contraseña" Type="nvarchar" Nullable="false" MaxLength="40" />
-          <Property Name="estado" Type="nvarchar" Nullable="false" MaxLength="15" />
+          <Property Name="IdUsuairo" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="usuario" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="contraseña" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="estado" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="IdPaciente" Type="nvarchar" MaxLength="4" />
           <Property Name="Rol" Type="nchar" MaxLength="1" />
         </EntityType>
@@ -195,16 +136,16 @@
           <Key>
             <PropertyRef Name="IdUsuario" />
           </Key>
-          <Property Name="IdUsuario" Type="nchar" Nullable="false" MaxLength="4" />
-          <Property Name="usuario" Type="nvarchar" Nullable="false" MaxLength="10" />
-          <Property Name="contraseña" Type="nvarchar" Nullable="false" MaxLength="40" />
-          <Property Name="estado" Type="nvarchar" Nullable="false" MaxLength="15" />
-          <Property Name="rol" Type="nchar" Nullable="false" MaxLength="1" />
-          <Property Name="IdEmpleado" Type="nvarchar" Nullable="false" MaxLength="4" />
+          <Property Name="IdUsuario" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="usuario" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="contraseña" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="estado" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="rol" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="IdEmpleado" Type="nvarchar" MaxLength="4" Nullable="false" />
         </EntityType>
         <Association Name="FK__Citas__IdEmplead__1367E606">
-          <End Role="Empleado" Type="MiseladaModel.Store.Empleado" Multiplicity="1" />
-          <End Role="Citas" Type="MiseladaModel.Store.Citas" Multiplicity="*" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+          <End Role="Citas" Type="Self.Citas" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Empleado">
               <PropertyRef Name="IdEmpleado" />
@@ -215,8 +156,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Citas__IdPacient__145C0A3F">
-          <End Role="Paciente" Type="MiseladaModel.Store.Paciente" Multiplicity="1" />
-          <End Role="Citas" Type="MiseladaModel.Store.Citas" Multiplicity="*" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="1" />
+          <End Role="Citas" Type="Self.Citas" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Paciente">
               <PropertyRef Name="IdPaciente" />
@@ -227,8 +168,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Detalle_E__IdExa__1CBC4616">
-          <End Role="Examenes" Type="MiseladaModel.Store.Examenes" Multiplicity="1" />
-          <End Role="Detalle_Examenes" Type="MiseladaModel.Store.Detalle_Examenes" Multiplicity="*" />
+          <End Role="Examenes" Type="Self.Examenes" Multiplicity="1" />
+          <End Role="Detalle_Examenes" Type="Self.Detalle_Examenes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Examenes">
               <PropertyRef Name="IdExamen" />
@@ -239,8 +180,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Detalle_R__IdPac__17036CC0">
-          <End Role="Paciente" Type="MiseladaModel.Store.Paciente" Multiplicity="1" />
-          <End Role="Detalle_Receta" Type="MiseladaModel.Store.Detalle_Receta" Multiplicity="*" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="1" />
+          <End Role="Detalle_Receta" Type="Self.Detalle_Receta" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Paciente">
               <PropertyRef Name="IdPaciente" />
@@ -251,8 +192,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Empleado__IdDist__15502E78">
-          <End Role="Distrito" Type="MiseladaModel.Store.Distrito" Multiplicity="1" />
-          <End Role="Empleado" Type="MiseladaModel.Store.Empleado" Multiplicity="*" />
+          <End Role="Distrito" Type="Self.Distrito" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Distrito">
               <PropertyRef Name="IdDistrito" />
@@ -263,8 +204,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Empleado__IdEspe__6FE99F9F">
-          <End Role="Especialidades" Type="MiseladaModel.Store.Especialidades" Multiplicity="0..1" />
-          <End Role="Empleado" Type="MiseladaModel.Store.Empleado" Multiplicity="*" />
+          <End Role="Especialidades" Type="Self.Especialidades" Multiplicity="0..1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Especialidades">
               <PropertyRef Name="IdEspecialidades" />
@@ -275,8 +216,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Examenes__IdPaci__19DFD96B">
-          <End Role="Paciente" Type="MiseladaModel.Store.Paciente" Multiplicity="1" />
-          <End Role="Examenes" Type="MiseladaModel.Store.Examenes" Multiplicity="*" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="1" />
+          <End Role="Examenes" Type="Self.Examenes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Paciente">
               <PropertyRef Name="IdPaciente" />
@@ -287,8 +228,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Paciente__IdDist__164452B1">
-          <End Role="Distrito" Type="MiseladaModel.Store.Distrito" Multiplicity="1" />
-          <End Role="Paciente" Type="MiseladaModel.Store.Paciente" Multiplicity="*" />
+          <End Role="Distrito" Type="Self.Distrito" Multiplicity="1" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Distrito">
               <PropertyRef Name="IdDistrito" />
@@ -299,8 +240,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Usuarios__IdPaci__76969D2E">
-          <End Role="Paciente" Type="MiseladaModel.Store.Paciente" Multiplicity="0..1" />
-          <End Role="Usuarios" Type="MiseladaModel.Store.Usuarios" Multiplicity="*" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="0..1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Paciente">
               <PropertyRef Name="IdPaciente" />
@@ -311,8 +252,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__UsuMedico__IdEmp__59C55456">
-          <End Role="Empleado" Type="MiseladaModel.Store.Empleado" Multiplicity="1" />
-          <End Role="UsuMedico" Type="MiseladaModel.Store.UsuMedico" Multiplicity="*" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+          <End Role="UsuMedico" Type="Self.UsuMedico" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Empleado">
               <PropertyRef Name="IdEmpleado" />
@@ -323,8 +264,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Alergias_paciente">
-          <End Role="Paciente" Type="MiseladaModel.Store.Paciente" Multiplicity="0..1" />
-          <End Role="Alergias" Type="MiseladaModel.Store.Alergias" Multiplicity="*" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="0..1" />
+          <End Role="Alergias" Type="Self.Alergias" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Paciente">
               <PropertyRef Name="IdPaciente" />
@@ -334,7 +275,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -547,6 +488,65 @@
         <Function Name="usp_obtener_usuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="user" Type="nvarchar" Mode="In" />
         </Function>
+        <EntityContainer Name="MiseladaModelStoreContainer">
+          <EntitySet Name="Alergias" EntityType="Self.Alergias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Citas" EntityType="Self.Citas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Detalle_Examenes" EntityType="Self.Detalle_Examenes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Detalle_Receta" EntityType="Self.Detalle_Receta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Distrito" EntityType="Self.Distrito" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Especialidades" EntityType="Self.Especialidades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Examenes" EntityType="Self.Examenes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medicamento" EntityType="Self.Medicamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Paciente" EntityType="Self.Paciente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsuMedico" EntityType="Self.UsuMedico" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Citas__IdEmplead__1367E606" Association="Self.FK__Citas__IdEmplead__1367E606">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Citas" EntitySet="Citas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Citas__IdPacient__145C0A3F" Association="Self.FK__Citas__IdPacient__145C0A3F">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Citas" EntitySet="Citas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Detalle_E__IdExa__1CBC4616" Association="Self.FK__Detalle_E__IdExa__1CBC4616">
+            <End Role="Examenes" EntitySet="Examenes" />
+            <End Role="Detalle_Examenes" EntitySet="Detalle_Examenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Detalle_R__IdPac__17036CC0" Association="Self.FK__Detalle_R__IdPac__17036CC0">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Detalle_Receta" EntitySet="Detalle_Receta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Empleado__IdDist__15502E78" Association="Self.FK__Empleado__IdDist__15502E78">
+            <End Role="Distrito" EntitySet="Distrito" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Empleado__IdEspe__6FE99F9F" Association="Self.FK__Empleado__IdEspe__6FE99F9F">
+            <End Role="Especialidades" EntitySet="Especialidades" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Examenes__IdPaci__19DFD96B" Association="Self.FK__Examenes__IdPaci__19DFD96B">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Examenes" EntitySet="Examenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Paciente__IdDist__164452B1" Association="Self.FK__Paciente__IdDist__164452B1">
+            <End Role="Distrito" EntitySet="Distrito" />
+            <End Role="Paciente" EntitySet="Paciente" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuarios__IdPaci__76969D2E" Association="Self.FK__Usuarios__IdPaci__76969D2E">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UsuMedico__IdEmp__59C55456" Association="Self.FK__UsuMedico__IdEmp__59C55456">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="UsuMedico" EntitySet="UsuMedico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alergias_paciente" Association="Self.FK_Alergias_paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Alergias" EntitySet="Alergias" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -692,7 +692,7 @@
           <Parameter Name="ccod" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_consultarCitasEmpleado" ReturnType="Collection(MiseladaModel.usp_consultarCitasEmpleado_Result1)">
-          <Parameter Name="estado" Mode="In" Type="String" />
+            <Parameter Name="estado" Mode="In" Type="String" />
             <Parameter Name="fechaini" Mode="In" Type="DateTime" />
             <Parameter Name="fechafin" Mode="In" Type="DateTime" />
           </FunctionImport>
@@ -793,7 +793,7 @@
             <Parameter Name="user" Mode="In" Type="String" />
             <Parameter Name="password" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="usp_obtener_usuario" ReturnType="Collection(MiseladaModel.usp_obtener_usuario_Result)">
+          <FunctionImport Name="usp_obtener_usuario" ReturnType="Collection(MiseladaModel.usp_obtener_usuario_Result1)">
           <Parameter Name="user" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="ListarEmpleado" ReturnType="Collection(MiseladaModel.usp_listarEmpleado_Result)" />
@@ -1558,6 +1558,14 @@
           <Property Type="Time" Name="HoraFin" Nullable="false" />
           <Property Type="String" Name="Estado" Nullable="true" MaxLength="9" />
         </ComplexType>
+        <ComplexType Name="usp_obtener_usuario_Result1">
+          <Property Type="String" Name="IdUsuairo" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="usuario" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="contraseña" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="estado" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="IdPaciente" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="Rol" Nullable="true" MaxLength="1" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2102,13 +2110,14 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="usp_obtener_usuario" FunctionName="MiseladaModel.Store.usp_obtener_usuario">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="MiseladaModel.usp_obtener_usuario_Result">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="MiseladaModel.usp_obtener_usuario_Result1">
                 <ScalarProperty Name="IdUsuairo" ColumnName="IdUsuairo" />
                 <ScalarProperty Name="usuario" ColumnName="usuario" />
                 <ScalarProperty Name="contraseña" ColumnName="contraseña" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
+                <ScalarProperty Name="Rol" ColumnName="Rol" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -2474,6 +2483,7 @@
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

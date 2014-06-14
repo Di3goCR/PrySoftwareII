@@ -713,13 +713,13 @@ namespace PrySWII_ADO
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_login_Result>("usp_login", userParameter, passwordParameter);
         }
     
-        public virtual ObjectResult<usp_obtener_usuario_Result> usp_obtener_usuario(string user)
+        public virtual ObjectResult<usp_obtener_usuario_Result1> usp_obtener_usuario(string user)
         {
             var userParameter = user != null ?
                 new ObjectParameter("user", user) :
                 new ObjectParameter("user", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_obtener_usuario_Result>("usp_obtener_usuario", userParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_obtener_usuario_Result1>("usp_obtener_usuario", userParameter);
         }
     
         public virtual ObjectResult<usp_listarEmpleado_Result> ListarEmpleado()

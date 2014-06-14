@@ -18,7 +18,7 @@ public partial class Mantenimientos_frmEmpleados : System.Web.UI.Page
         {
             if (Page.IsPostBack == false)
             {
-                gvEmpleados.DataSource = objEmpleadoBL.listarUsuarios();
+                gvEmpleados.DataSource = objEmpleadoBL.listarUsuariosDB();
                 gvEmpleados.DataBind();
 
                 Application_Start();
@@ -52,15 +52,20 @@ public partial class Mantenimientos_frmEmpleados : System.Web.UI.Page
             }   
         }
 
-        List<UsuarioBE> listUsers = new LoginBL().listarUsuarios();
+       
+        List<UsuarioBEDB> listUsers = new LoginBL().listarUsuariosDB();
+        PacienteBL pacientebl = new PacienteBL();
+        PacienteBE objpaciente = new PacienteBE();
+        
 
-        foreach (UsuarioBE user in listUsers)
+        foreach (UsuarioBEDB user in listUsers)
         {
             if (user.estado.Equals("Activo"))
             {
                 if (Membership.GetUser(user.usuario) == null)
                 {
-                    Membership.CreateUser(user.usuario, user.contraseña);
+                    objpaciente = pacientebl.consultarPaciente(user.IdPaciente);
+                    Membership.CreateUser(user.usuario, user.contraseña,objpaciente.Email);
                 }
 
                 if (!Roles.IsUserInRole(user.usuario,roles[int.Parse(user.Rol)].ToString()))

@@ -51,6 +51,8 @@
     <Compile Include="MedicamentoBE.cs" />
     <Compile Include="PacienteBE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolBE.cs" />
+    <Compile Include="UsuarioBEDB.cs" />
     <Compile Include="UsuarioBE.cs" />
     <Compile Include="UsuMedicoBE.cs" />
   </ItemGroup>

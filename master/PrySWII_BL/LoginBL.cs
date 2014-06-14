@@ -11,13 +11,13 @@ namespace PrySWII_BL
     {
         UsuarioADO login = new UsuarioADO();
 
-        public UsuarioBE validarLogin(String user, String pass)
+        public UsuarioBEDB consultarUsuarioDB(String user)
         {
-            return login.validarUsuario(user, pass);
+            return login.ConsultarUsuarioDB(user);
          }
 
-        public List<UsuarioBE> listarUsuarios() {
-            return login.ListarUsuarios();
+        public List<UsuarioBEDB> listarUsuariosDB() {
+            return login.ListarUsuariosDB();
         }
 
         public List<UsuMedicoBE> ListarUsuarioMedicos()
